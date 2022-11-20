@@ -1,10 +1,9 @@
 use std::env;
-use std::io;
 use std::fs::File;
 use std::io::prelude::*;
 use std::process::exit;
 
-fn main() -> io::Result<()> {
+fn main() {
     let args: Vec<String> = env::args().collect();
 
     let mut size = String::new();
@@ -48,8 +47,6 @@ fn main() -> io::Result<()> {
 
         byte_count += 64;
     }
-
-    Ok(())
 }
 
 fn parse_value(value: String) -> u32 {
