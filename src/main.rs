@@ -13,7 +13,6 @@ fn main() {
         for i in 0..args.len() {
             if args[i].eq(&"-o") {
                 output_file.replace_range(.., &args[i + 1]);
-//              println!("Got output file: {output_file}");
             }
             else if args[i].eq(&"-s") {
                 size.replace_range(.., &args[i + 1]);
@@ -50,7 +49,7 @@ fn main() {
 }
 
 fn parse_value(value: String) -> u32 {
-    let value: u32 = value.trim().parse().expect("Please type a number!");
+    let value: u32 = value.trim().parse().expect("String does not contain a valid number");
 
     return value;
 }
